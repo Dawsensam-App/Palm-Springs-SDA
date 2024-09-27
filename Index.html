@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evangelistic Campaign Countdown</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0000ff; /* Blue background */
+            color: #ffffff; /* White text */
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            color: #ff0000; /* Red for the heading */
+            font-size: 3em;
+        }
+
+        h2 {
+            color: #ffff00; /* Dark yellow for secondary text */
+            font-size: 2em;
+        }
+
+        .countdown {
+            font-size: 4em;
+            margin: 20px 0;
+        }
+
+        .event-details {
+            font-size: 1.5em;
+            color: #ffffff;
+            margin-bottom: 40px;
+        }
+
+        .highlight {
+            color: #ff0000; /* Red for highlights */
+        }
+
+        .footer {
+            background-color: #000080; /* Darker blue for the footer */
+            padding: 20px;
+            margin-top: 50px;
+            border-radius: 10px;
+        }
+
+        .footer p {
+            margin: 0;
+            font-size: 1.2em;
+        }
+
+        .invitation {
+            color: #ffff00; /* Yellow for the invitation text */
+            font-size: 1.8em;
+        }
+
+        .designer {
+            color: #ffffff;
+            margin-top: 20px;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Evangelistic Campaign Countdown</h1>
+    <h2>Starting on October 12, 2024 at 9:30 A.M</h2>
+    <div class="countdown" id="countdown"></div>
+
+    <div class="event-details">
+        There will be:
+        <span class="highlight">Powerful Sermons</span> - 
+        <span class="highlight">Live Worship</span> - 
+        <span class="highlight">Prayer of Deliverance</span> - 
+        <span class="highlight">Gifts</span>
+    </div>
+
+    <div class="invitation">
+        YOU ARE INVITED, MARK YOUR CALENDAR!
+    </div>
+
+    <div class="footer">
+        <p>Palm Springs Seventh-day Adventist Church</p>
+        <p>4424 S Military Trail, Lake Worth Beach, FL 33463</p>
+    </div>
+
+    <div class="designer">
+        Designed by Sam Dawsen for Palm Springs Seventh-day Adventist Church
+    </div>
+
+    <script>
+        // Set the date for the event
+        var countDownDate = new Date("October 12, 2024 09:30:00").getTime();
+
+        // Update the countdown every 1 second
+        var countdownFunction = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+
+            // Calculate days, hours, minutes, and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the result
+            document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+            + minutes + "m " + seconds + "s ";
+
+            // If the countdown is over, show a message
+            if (distance < 0) {
+                clearInterval(countdownFunction);
+                document.getElementById("countdown").innerHTML = "The event is happening now!";
+            }
+        }, 1000);
+    </script>
+
+</body>
+</html>
